@@ -7,6 +7,7 @@ import click
 
 from prometheus_webhook_snmp import utils
 
+
 __version__ = "1.5"
 
 
