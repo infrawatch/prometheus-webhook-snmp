@@ -15,7 +15,7 @@ COPY . /source/app
 WORKDIR /source/app
 
 RUN alternatives --set python /usr/bin/python3 && \
-    python -m pip install --no-cache-dir --upgrade setuptools pip && \
+    python -m pip install --no-cache-dir --upgrade setuptools pip==21.3.1 && \
     python -m pip install --no-cache-dir wheel && \
     python -m pip install --no-cache-dir -r requirements-build.txt && \
     python -m pip install --no-cache-dir . && \
