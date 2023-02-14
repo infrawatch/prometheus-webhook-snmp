@@ -8,14 +8,14 @@ RUN INSTALL_PKGS="\
         python3-devel \
         gcc \
         " && \
-    dnf -y --setopt=tsflags=nodocs --setopt=skip_missing_names_on_install=False install "$INSTALL_PKGS" && \
+    dnf -y --setopt=tsflags=nodocs --setopt=skip_missing_names_on_install=False install $INSTALL_PKGS && \
     dnf -y clean all
 
 COPY . /source/app
 WORKDIR /source/app
 
 RUN alternatives --set python /usr/bin/python3 && \
-    python -m pip install --no-cache-dir --upgrade setuptools pip==21.3.1 && \
+    python -m pip install --no-cache-dir --upgrade setuptools pip && \
     python -m pip install --no-cache-dir wheel && \
     python -m pip install --no-cache-dir -r requirements-build.txt && \
     python -m pip install --no-cache-dir . && \
@@ -25,7 +25,7 @@ RUN alternatives --set python /usr/bin/python3 && \
 RUN UNINSTALL_PKGS="\
         gcc \
         " && \
-    dnf remove -y "$UNINSTALL_PKGS" && \
+    dnf remove -y $UNINSTALL_PKGS && \
     dnf -y clean all
 
 ENV SNMP_COMMUNITY="public"
