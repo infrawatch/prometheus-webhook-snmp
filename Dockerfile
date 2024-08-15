@@ -1,8 +1,4 @@
-FROM quay.io/centos/centos:stream8
-
-# Update repos to use the vault mirror, now that CentOS 8 Stream is EOL
-RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
-RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+FROM quay.io/centos/centos:stream9
 
 # >> ignore SC2086 because passing quoted env vars to dnf causes issues (fail to install)
 # hadolint ignore=SC2086
