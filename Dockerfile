@@ -16,10 +16,9 @@ RUN INSTALL_PKGS="\
 COPY . /source/app
 WORKDIR /source/app
 
-RUN alternatives --set python /usr/bin/python3 && \
-    python -m pip install --no-cache-dir -r requirements-build.txt && \
-    python -m pip install --no-cache-dir . && \
-    python -m pip freeze
+RUN python3 -m pip install --no-cache-dir -r requirements-build.txt && \
+    python3 -m pip install --no-cache-dir . && \
+    python3 -m pip freeze
 
 # Cleanup
 # >> ignore SC2086 because passing quoted env vars to dnf causes issues (fail to install)
