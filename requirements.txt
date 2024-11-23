@@ -40,7 +40,7 @@ pluggy==0.13.1
     # via pytest
 ply==3.11
     # via pysmi
-portend==2.7.1
+portend==2.7.2
     # via cherrypy
 prometheus_client==0.6.0
     # via -r requirements.in
