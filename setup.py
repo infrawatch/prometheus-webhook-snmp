@@ -12,7 +12,7 @@ with open('CHANGELOG.md') as changelog_file:
 
 
 requirements = [
-    'CherryPy==18.1.1',
+    'CherryPy==18.10.0',
     'Click==7.0',
     'PyYAML==5.4',
     'mock==3.0.5',
