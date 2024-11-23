@@ -22,7 +22,7 @@ requirements = [
     'pysnmp==4.4.8',
     'pytest==4.4.0',
     'python-dateutil==2.8.0',
-    'pytest-runner==5.3.1',
+    'pytest-runner==5.3.2',
 ]
 
 dependency_links = [
