@@ -66,7 +66,7 @@ python-dateutil==2.8.0
     # via -r requirements.in
 pytz==2021.1
     # via tempora
-pyyaml==5.4
+pyyaml==5.4.1
     # via -r requirements.in
 six==1.16.0
     # via
