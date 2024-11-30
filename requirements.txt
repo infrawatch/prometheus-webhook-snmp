@@ -14,7 +14,7 @@ cheroot==8.5.2
     # via cherrypy
 cherrypy==18.1.1
     # via -r requirements.in
-click==7.0
+click==7.1.2
     # via -r requirements.in
 importlib-metadata==4.0.1
     # via pluggy
