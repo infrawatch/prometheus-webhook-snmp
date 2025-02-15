@@ -10,7 +10,7 @@ atomicwrites==1.4.0
     # via pytest
 attrs==21.2.0
     # via pytest
-cheroot==8.5.2
+cheroot==10.0.1
     # via cherrypy
 cherrypy==18.1.1
     # via -r requirements.in
