@@ -50,7 +50,7 @@ pyasn1==0.4.8
     # via pysnmp
 pycryptodomex==3.10.1
     # via pysnmp
-pyfakefs==3.5.8
+pyfakefs==3.7.2
     # via -r requirements.in
 pylint==2.3.1
     # via -r requirements.in
