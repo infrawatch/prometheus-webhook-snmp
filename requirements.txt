@@ -20,7 +20,7 @@ importlib-metadata==4.0.1
     # via pluggy
 isort==4.3.21
     # via pylint
-jaraco.functools==3.3.0
+jaraco.functools==4.1.0
     # via
     #   cheroot
     #   tempora
