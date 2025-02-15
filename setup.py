@@ -21,7 +21,7 @@ requirements = [
     'pylint==2.3.1',
     'pysnmp==4.4.8',
     'pytest==4.4.0',
-    'python-dateutil==2.8.0',
+    'python-dateutil==2.9.0.post0',
     'pytest-runner==5.3.1',
 ]
 
