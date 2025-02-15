@@ -52,7 +52,7 @@ pycryptodomex==3.10.1
     # via pysnmp
 pyfakefs==3.5.8
     # via -r requirements.in
-pylint==2.3.1
+pylint==3.3.4
     # via -r requirements.in
 pysmi==0.3.4
     # via pysnmp
