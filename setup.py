@@ -18,7 +18,7 @@ requirements = [
     'mock==3.0.5',
     'prometheus_client==0.6.0',
     'pyfakefs==3.5.8',
-    'pylint==2.3.1',
+    'pylint==2.17.7',
     'pysnmp==4.4.8',
     'pytest==4.4.0',
     'python-dateutil==2.8.0',
