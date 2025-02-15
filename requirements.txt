@@ -82,7 +82,7 @@ typing-extensions==3.10.0.0
     # via importlib-metadata
 wrapt==1.12.1
     # via astroid
-zc.lockfile==2.0
+zc.lockfile==3.0.post1
     # via cherrypy
 zipp==3.4.1
     # via importlib-metadata
