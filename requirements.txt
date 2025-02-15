@@ -44,7 +44,7 @@ portend==2.7.1
     # via cherrypy
 prometheus_client==0.6.0
     # via -r requirements.in
-py==1.10.0
+py==1.11.0
     # via pytest
 pyasn1==0.4.8
     # via pysnmp
