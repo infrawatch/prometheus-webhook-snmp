@@ -15,7 +15,7 @@ requirements = [
     'CherryPy==18.1.1',
     'Click==7.0',
     'PyYAML==5.4',
-    'mock==3.0.5',
+    'mock==5.1.0',
     'prometheus_client==0.6.0',
     'pyfakefs==3.5.8',
     'pylint==2.3.1',
