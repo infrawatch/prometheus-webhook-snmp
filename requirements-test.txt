@@ -1,2 +1,2 @@
-pyfakefs==3.5.8
+pyfakefs==5.7.4
 pytest==4.4.0
