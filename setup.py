@@ -20,7 +20,7 @@ requirements = [
     'pyfakefs==3.5.8',
     'pylint==2.3.1',
     'pysnmp==4.4.8',
-    'pytest==4.4.0',
+    'pytest==8.3.4',
     'python-dateutil==2.8.0',
     'pytest-runner==5.3.1',
 ]
