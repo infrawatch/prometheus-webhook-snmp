@@ -14,7 +14,7 @@ with open('CHANGELOG.md') as changelog_file:
 requirements = [
     'CherryPy==18.1.1',
     'Click==7.0',
-    'PyYAML==5.4',
+    'PyYAML==6.0.2',
     'mock==3.0.5',
     'prometheus_client==0.6.0',
     'pyfakefs==3.5.8',
