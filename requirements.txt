@@ -48,7 +48,7 @@ py==1.10.0
     # via pytest
 pyasn1==0.4.8
     # via pysnmp
-pycryptodomex==3.10.1
+pycryptodomex==3.21.0
     # via pysnmp
 pyfakefs==3.5.8
     # via -r requirements.in
