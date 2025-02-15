@@ -24,7 +24,7 @@ jaraco.functools==3.3.0
     # via
     #   cheroot
     #   tempora
-lazy-object-proxy==1.6.0
+lazy-object-proxy==1.10.0
     # via astroid
 mccabe==0.6.1
     # via pylint
