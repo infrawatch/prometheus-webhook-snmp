@@ -46,7 +46,7 @@ prometheus_client==0.6.0
     # via -r requirements.in
 py==1.10.0
     # via pytest
-pyasn1==0.4.8
+pyasn1==0.6.1
     # via pysnmp
 pycryptodomex==3.10.1
     # via pysnmp
