@@ -18,7 +18,7 @@ click==7.0
     # via -r requirements.in
 importlib-metadata==4.0.1
     # via pluggy
-isort==4.3.21
+isort==6.0.0
     # via pylint
 jaraco.functools==3.3.0
     # via
