@@ -54,7 +54,7 @@ pyfakefs==3.5.8
     # via -r requirements.in
 pylint==2.3.1
     # via -r requirements.in
-pysmi==0.3.4
+pysmi==1.5.11
     # via pysnmp
 pysnmp==4.4.8
     # via -r requirements.in
