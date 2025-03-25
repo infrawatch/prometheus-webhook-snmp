@@ -34,4 +34,3 @@ jobs:
 
       - name: Verify image builds
         run: docker build --tag infrawatch/prometheus-webhook-snmp:latest --file Dockerfile .
-
