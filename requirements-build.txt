@@ -11,7 +11,7 @@ packaging==21.3
     # via
     #   -r requirements-build.in
     #   setuptools-scm
-poetry-core==2.1.1
+poetry-core==1.0.8
     # via -r requirements-build.in
 setuptools-scm==8.2.0
     # via -r requirements-build.in
