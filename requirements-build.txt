@@ -7,24 +7,52 @@
 cython==0.29.23
     # via -r requirements-build.in
 flit-core==3.12.0
+    # via
+    #   -r requirements-build.in
+    #   flit-scm
+flit-scm==1.7.0
     # via -r requirements-build.in
+hatch-vcs==0.4.0
+    # via -r requirements-build.in
+hatchling==1.27.0
+    # via
+    #   -r requirements-build.in
+    #   hatch-vcs
 packaging==24.2
     # via
     #   -r requirements-build.in
+    #   hatchling
     #   setuptools-scm
+pathspec==0.12.1
+    # via
+    #   -r requirements-build.in
+    #   hatchling
+pluggy==1.5.0
+    # via
+    #   -r requirements-build.in
+    #   hatchling
 poetry-core==2.1.1
     # via -r requirements-build.in
 setuptools-scm==7.1.0
-    # via -r requirements-build.in
+    # via
+    #   -r requirements-build.in
+    #   flit-scm
+    #   hatch-vcs
 tomli==2.2.1
     # via
     #   -r requirements-build.in
+    #   flit-scm
+    #   hatchling
     #   setuptools-scm
+trove-classifiers==2025.3.19.19
+    # via
+    #   -r requirements-build.in
+    #   hatchling
 typing-extensions==4.13.0
     # via
     #   -r requirements-build.in
     #   setuptools-scm
-wheel==0.36.2
+wheel==0.45.1
     # via -r requirements-build.in
 
 # The following packages are considered to be unsafe in a requirements file:

@@ -4,5 +4,10 @@ PyYAML==6.0.2
 mock==5.2.0
 prometheus_client==0.21.1
 pyfakefs==5.8.0
+pylint==3.3.6
 pysnmp==7.1.17
+pyasn1==0.6.0
+pytest==8.3.5
+pytest-runner==6.0.1
 python_dateutil==2.9.0.post0
+pip==25.0.1
