@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import asyncio
 import datetime
 import logging
 import sys
@@ -123,7 +124,7 @@ def test(ctx):
     })
     if trap_data is not None:
         for data in trap_data:
-            utils.send_snmp_trap(ctx.config, data)
+            asyncio.run(utils.send_snmp_trap(ctx.config, data))
     sys.exit(0)
 
 
