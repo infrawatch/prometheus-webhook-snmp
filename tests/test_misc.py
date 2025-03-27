@@ -1,3 +1,4 @@
+import asyncio
 import unittest
 
 import mock
@@ -120,7 +121,7 @@ class FunctionTestCase(unittest.TestCase):
     def test_send_snmp_trap(self):
         config = Config()
         self.assertIsInstance(config['trap_default_severity'], str)
-        send_snmp_trap(config, {
+        asyncio.run(send_snmp_trap(config, {
             'oid': '1.3.6.1.4.1.50495.15.1.2.1',
             'alertname': None,
             'status': 'resolved',
@@ -131,7 +132,7 @@ class FunctionTestCase(unittest.TestCase):
             'labels': {},
             'timestamp': 1554110387,
             'rawdata': {}
-        })
+        }))
 
 
 class ConfigTestCase(unittest.TestCase):

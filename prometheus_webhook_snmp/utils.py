@@ -1,3 +1,4 @@
+import asyncio
 import datetime
 import ipaddress
 import json
@@ -9,7 +10,11 @@ import cherrypy
 import dateutil.parser
 import prometheus_client
 import yaml
-from pysnmp import hlapi
+from pysnmp.hlapi.asyncio import (send_notification, SnmpEngine, CommunityData,
+                                  UdpTransportTarget, Udp6TransportTarget,
+                                  ContextData, NotificationType,
+                                  ObjectIdentity, OctetString, TimeTicks)
+from pysnmp.smi.rfc1902 import ObjectType
 
 logger = logging.getLogger(__name__)
 
@@ -101,7 +106,7 @@ def parse_notification(config, notification):
     return result
 
 
-def send_snmp_trap(config, trap_data):
+async def send_snmp_trap(config, trap_data):
     """
     Send a SNMP v2c trap.
     :param config: The configuration data.
@@ -126,39 +131,41 @@ def send_snmp_trap(config, trap_data):
     try:
         # Will raise an exception if ``snmp_host`` isn't an IPv6 address.
         ipaddress.IPv6Address(config['snmp_host'])
-        transport_target = hlapi.Udp6TransportTarget(transport_addr)
+        transport_target = await Udp6TransportTarget.create(transport_addr)
     except ValueError:
-        transport_target = hlapi.UdpTransportTarget(transport_addr)
+        transport_target = await UdpTransportTarget.create(transport_addr)
     transport_target.retries = config['snmp_retries']
     transport_target.timeout = config['snmp_timeout']
 
-    var_binds = hlapi.NotificationType(hlapi.ObjectIdentity(trap_data['oid']))
+    var_binds = NotificationType(ObjectIdentity(trap_data['oid']))
     var_binds.addVarBinds(
-        hlapi.ObjectType(hlapi.ObjectIdentity(oids['alertname']),
-                         hlapi.OctetString(trap_data['alertname'] or '')),
-        hlapi.ObjectType(hlapi.ObjectIdentity(oids['status']),
-                         hlapi.OctetString(trap_data['status'] or '')),
-        hlapi.ObjectType(hlapi.ObjectIdentity(oids['severity']),
-                         hlapi.OctetString(trap_data['severity'] or '')),
-        hlapi.ObjectType(hlapi.ObjectIdentity(oids['instance']),
-                         hlapi.OctetString(trap_data['instance'] or '')),
-        hlapi.ObjectType(hlapi.ObjectIdentity(oids['job']),
-                         hlapi.OctetString(trap_data['job'] or '')),
-        hlapi.ObjectType(hlapi.ObjectIdentity(oids['description']),
-                         hlapi.OctetString(trap_data['description'] or '')),
-        hlapi.ObjectType(hlapi.ObjectIdentity(oids['labels']),
-                         hlapi.OctetString(json.dumps(trap_data['labels'] or ''))),
-        hlapi.ObjectType(hlapi.ObjectIdentity(oids['timestamp']),
-                         hlapi.TimeTicks(trap_data['timestamp'])),
-        hlapi.ObjectType(hlapi.ObjectIdentity(oids['rawdata']),
-                         hlapi.OctetString(json.dumps(trap_data['rawdata'])))
+        ObjectType(ObjectIdentity(oids['alertname']),
+                    OctetString(trap_data['alertname'] or '')),
+        ObjectType(ObjectIdentity(oids['status']),
+                         OctetString(trap_data['status'] or '')),
+        ObjectType(ObjectIdentity(oids['severity']),
+                         OctetString(trap_data['severity'] or '')),
+        ObjectType(ObjectIdentity(oids['instance']),
+                         OctetString(trap_data['instance'] or '')),
+        ObjectType(ObjectIdentity(oids['job']),
+                         OctetString(trap_data['job'] or '')),
+        ObjectType(ObjectIdentity(oids['description']),
+                         OctetString(trap_data['description'] or '')),
+        ObjectType(ObjectIdentity(oids['labels']),
+                         OctetString(json.dumps(trap_data['labels'] or ''))),
+        ObjectType(ObjectIdentity(oids['timestamp']),
+                         TimeTicks(trap_data['timestamp'])),
+        ObjectType(ObjectIdentity(oids['rawdata']),
+                         OctetString(json.dumps(trap_data['rawdata'])))
     )
 
-    error_indication, error_status, error_index, _ = next(
-        hlapi.sendNotification(
-            hlapi.SnmpEngine(),
-            hlapi.CommunityData(config['snmp_community'], mpModel=1),
-            transport_target, hlapi.ContextData(), 'trap', var_binds))
+    error_indication, error_status, error_index, _ = await send_notification(
+        SnmpEngine(),
+        CommunityData(config['snmp_community'], mpModel=1),
+        transport_target,
+        ContextData(),
+        "trap",
+        var_binds)
 
     if error_indication:
         logger.error('SNMP trap not sent: %s', error_indication)
@@ -167,7 +174,6 @@ def send_snmp_trap(config, trap_data):
                      error_status, error_index)
     else:
         logger.debug('Sending SNMP trap: %s', trap_data)
-
 
 def get_http_server_config():
     """
@@ -354,5 +360,5 @@ class Root:  # pylint: disable=too-few-public-methods
         trap_data = parse_notification(self.ctx.config, notification)
         if trap_data is not None:
             for data in trap_data:
-                send_snmp_trap(self.ctx.config, data)
+                asyncio.run(send_snmp_trap(self.ctx.config, data))
                 self.ctx.telemetry.inc('traps')
