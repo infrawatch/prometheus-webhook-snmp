@@ -16,7 +16,7 @@ requirements = [
     'click==8.1.8',
     'PyYAML==6.0.2',
     'mock==5.2.0',
-    'prometheus_client==0.21.0',
+    'prometheus_client==0.21.1',
     'pyfakefs==5.8.0',
     'pylint==3.3.6',
     'pysnmp==7.1.17',
