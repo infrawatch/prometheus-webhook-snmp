@@ -4,7 +4,6 @@ FROM registry.access.redhat.com/ubi9:latest
 # hadolint ignore=SC2086
 RUN INSTALL_PKGS="\
         procps-ng \
-        telnet \
         lsof \
         python3 \
         python3-devel \
