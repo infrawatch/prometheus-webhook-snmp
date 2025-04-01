@@ -1,4 +1,4 @@
-FROM quay.io/centos/centos:stream9
+FROM registry.access.redhat.com/ubi9:latest
 
 # >> ignore SC2086 because passing quoted env vars to dnf causes issues (fail to install)
 # hadolint ignore=SC2086
