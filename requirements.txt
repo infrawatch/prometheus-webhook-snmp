@@ -93,7 +93,7 @@ zc-lockfile==3.0.post1
     # via cherrypy
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==25.0.1
+pip==25.2
     # via -r requirements.in
 setuptools==78.1.0
     # via zc-lockfile
