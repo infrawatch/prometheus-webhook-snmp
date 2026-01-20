@@ -1,5 +1,3 @@
-# >> ignore DL3007 warning (base image version pin)
-# hadolint ignore=DL3007
 FROM registry.access.redhat.com/ubi9:latest
 
 # >> ignore SC2086 because passing quoted env vars to dnf causes issues (fail to install)
