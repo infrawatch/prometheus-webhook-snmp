@@ -95,5 +95,5 @@ zc-lockfile==3.0.post1
 # The following packages are considered to be unsafe in a requirements file:
 pip==25.3
     # via -r requirements.in
-setuptools==78.1.0
+setuptools==78.1.1
     # via zc-lockfile
