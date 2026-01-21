@@ -4,6 +4,8 @@
 #
 #    pip-compile --allow-unsafe --output-file=requirements-build.txt requirements-build.in
 #
+calver==2025.3.31
+    # via -r requirements-build.in
 cython==3.2.4
     # via -r requirements-build.in
 flit-core==3.12.0
