@@ -35,12 +35,12 @@ pluggy==1.6.0
     #   hatchling
 poetry-core==2.2.1
     # via -r requirements-build.in
-setuptools-scm==9.2.2
+setuptools-scm==7.1.0
     # via
     #   -r requirements-build.in
     #   flit-scm
     #   hatch-vcs
-tomli==2.4.0
+tomli==2.2.1
     # via
     #   -r requirements-build.in
     #   flit-scm
@@ -58,7 +58,7 @@ wheel==0.45.1
     # via -r requirements-build.in
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==80.10.1
+setuptools==78.1.0
     # via
     #   -r requirements-build.in
     #   setuptools-scm
