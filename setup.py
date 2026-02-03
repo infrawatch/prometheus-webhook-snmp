@@ -24,7 +24,7 @@ requirements = [
     'pytest==8.3.5',
     'pytest-runner==6.0.1',
     'python-dateutil==2.9.0.post0',
-    'pip==25.3',
+    'pip==26.0',
 ]
 
 dependency_links = [
