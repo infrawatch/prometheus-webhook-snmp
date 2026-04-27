@@ -26,7 +26,7 @@ packaging==26.0
     #   hatchling
     #   setuptools-scm
     #   wheel
-pathspec==1.0.4
+pathspec==1.1.1
     # via
     #   -r requirements-build.in
     #   hatchling
@@ -55,7 +55,7 @@ typing-extensions==4.15.0
     # via
     #   -r requirements-build.in
     #   setuptools-scm
-wheel==0.46.3
+wheel==0.47.0
     # via -r requirements-build.in
 
 # The following packages are considered to be unsafe in a requirements file:
