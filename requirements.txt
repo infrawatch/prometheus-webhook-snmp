@@ -63,7 +63,7 @@ portend==3.2.1
     # via cherrypy
 prometheus-client==0.21.1
     # via -r requirements.in
-pyasn1==0.6.3
+pyasn1==0.6.4
     # via
     #   -r requirements.in
     #   pysnmp
