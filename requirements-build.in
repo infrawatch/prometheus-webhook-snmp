@@ -16,7 +16,7 @@ coherent-licensed==0.5.2
     #   portend
     #   tempora
     #   zipp
-cython==3.2.4
+cython==3.2.8
     # via pyyaml
 flit-core==3.12.0
     # via
@@ -52,10 +52,11 @@ packaging==26.2
     # via
     #   hatchling
     #   setuptools-scm
+    #   vcs-versioning
     #   wheel
 pathspec==1.1.1
     # via hatchling
-pdm-backend==2.4.8
+pdm-backend==2.4.9
     # via
     #   annotated-doc
     #   typer
@@ -67,9 +68,7 @@ poetry-core==2.2.1
     #   pysnmp
     #   rich
     #   tomlkit
-# setuptools-scm==7.1.0
-#     # via python-dateutil
-setuptools-scm==9.2.2
+setuptools-scm==10.2.0
     # via
     #   backports-tarfile
     #   cheroot
@@ -88,16 +87,21 @@ setuptools-scm==9.2.2
     #   setuptools-scm
     #   tempora
     #   zipp
-# tomli==2.0.2
-#     # via setuptools-scm
+# setuptools-scm==7.1.0
+#     # via python-dateutil
 tomli==2.4.1
     # via
     #   flit-scm
     #   hatchling
     #   setuptools-scm
-trove-classifiers==2026.1.14.14
+    #   vcs-versioning
+trove-classifiers==2026.6.1.19
     # via hatchling
 typing-extensions==4.15.0
+    # via
+    #   setuptools-scm
+    #   vcs-versioning
+vcs-versioning==2.2.2
     # via setuptools-scm
 wheel==0.47.0
     # via
@@ -138,4 +142,5 @@ setuptools==82.0.1
     #   shellingham
     #   tempora
     #   trove-classifiers
+    #   vcs-versioning
     #   zipp
