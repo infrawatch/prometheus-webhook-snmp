@@ -16,7 +16,7 @@ coherent-licensed==0.5.2
     #   portend
     #   tempora
     #   zipp
-cython==3.2.8
+cython==3.3.1
     # via pyyaml
 flit-core==3.12.0
     # via
@@ -26,12 +26,14 @@ flit-core==3.12.0
     #   markdown-it-py
     #   mdurl
     #   more-itertools
-    #   packaging
-    #   pathspec
     #   pip
     #   tomli
     #   typing-extensions
-    #   wheel
+# flit-core==4.2.0
+#     # via
+#     #   packaging
+#     #   pathspec
+#     #   wheel
 flit-scm==1.7.0
     # via exceptiongroup
 hatch-vcs==0.5.0
@@ -56,7 +58,7 @@ packaging==26.2
     #   wheel
 pathspec==1.1.1
     # via hatchling
-pdm-backend==2.4.9
+pdm-backend==2.5.0
     # via
     #   annotated-doc
     #   typer
@@ -68,7 +70,7 @@ poetry-core==2.2.1
     #   pysnmp
     #   rich
     #   tomlkit
-setuptools-scm==10.2.0
+setuptools-scm==10.3.4
     # via
     #   backports-tarfile
     #   cheroot
@@ -95,15 +97,15 @@ tomli==2.4.1
     #   hatchling
     #   setuptools-scm
     #   vcs-versioning
-trove-classifiers==2026.6.1.19
+trove-classifiers==2026.9.21.13
     # via hatchling
 typing-extensions==4.15.0
     # via
     #   setuptools-scm
     #   vcs-versioning
-vcs-versioning==2.2.2
+vcs-versioning==2.6.0
     # via setuptools-scm
-wheel==0.47.0
+wheel==0.48.0
     # via
     #   python-dateutil
     #   pyyaml
